@@ -1,0 +1,77 @@
+body {
+  font-family: monospace;
+  text-align: center;
+  background: black;
+  color: green;
+  margin: 0;
+  padding: 20px;
+  
+}
+
+#header {
+  margin-bottom: 20px;
+}
+
+#lights {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.light {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #444;
+  box-shadow: 0 0 5px #000;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.red.active { background: red; box-shadow: 0 0 15px red; }
+.blue.active { background: blue; box-shadow: 0 0 15px blue; }
+.yellow.active { background: yellow; box-shadow: 0 0 15px yellow; }
+.green.active { background: limegreen; box-shadow: 0 0 15px limegreen; }
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(5, 60px);
+  gap: 10px;
+  justify-content: center;
+}
+
+.card {
+  width: 60px;
+  height: 60px;
+  font-size: 24px;
+  background: green;
+  border: 2px solid green;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card.matched {
+  background: #333;
+  cursor: default;
+}
+
+.card.highlight {
+  animation: glow 1s infinite alternate;
+}
+
+@keyframes glow {
+  from { box-shadow: 0 0 5px white; }
+  to { box-shadow: 0 0 15px white; }
+}
+
+#ascii-win {
+  white-space: pre;
+  font-size: 12px;
+  margin-top: 30px;
+}
+
+.hidden {
+  display: none;
+}
